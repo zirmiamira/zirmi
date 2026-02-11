@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8" />
+     <meta name="description" content="Présentation détaillée du projet de dressage d'animaux" />
+    <title>Projet Dressage - Présentation</title>
+    <link rel="icon" type="image/png" href="images/logo.png"/>
+    <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+
+<header>
+    <h1>🐕 PROJET DRESSAGE 🐈</h1>
+    <!-- Navigation principale -->
+    <nav id="NavPrincipale">
+        <ul>
+            <li>
+             <a href="index.html">
+                <img id="logo" src="./images/logo.png" alt="Logo du projet Dressage"/>
+             </a>
+             </li>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="presentation.html">Présentation</a></li>
+            <li><a href="specifications.html">Spécifications</a></li>
+            <li><a href="recompenses.html">Système de récompense</a></li>
+            <li><a href="realisation.html">Realisation</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+
+    <!-- Présentation générale -->
+    <section>
+        <h2>Présentation du Projet</h2>
+
+        <article>
+            <h3>Vue d'Ensemble</h3>
+            <p>
+                Le <strong>Projet Dressage</strong> est une application de simulation interactive dédiée
+                à l’étude du comportement d’animaux domestiques dans un environnement virtuel contrôlé.
+                Le projet a été réalisé dans le cadre de l’unité d’enseignement
+                <em>Génie Logiciel et Projet (GLP)</em> de la Licence 2 Informatique à
+                CY Cergy Paris Université.
+            </p>
+            <p>
+                L’objectif de cette simulation est de modéliser un processus d’apprentissage progressif
+                basé sur les interactions entre l’animal, son environnement et les actions du maître.
+                L’application permet ainsi d’observer l’évolution du comportement de l’animal au fil du
+                temps, en fonction des récompenses et des punitions reçues.
+            </p>
+        </article>
+
+        <article>
+            <h3>Principes Fondamentaux</h3>
+            <p>
+                La simulation repose sur les principes du <strong>conditionnement opérant</strong>,
+                une théorie de l’apprentissage développée par le psychologue B.F. Skinner.
+                Ce modèle d’apprentissage considère que le comportement d’un individu évolue en fonction
+                des conséquences de ses actions.
+            </p>
+            <p>
+                Dans le cadre du projet, chaque action réalisée par l’animal est évaluée par le système
+                et entraîne une conséquence positive ou négative. Ces conséquences influencent
+                progressivement la probabilité de reproduction du comportement concerné.
+            </p>
+
+            <ul class="styled-list">
+                <li><strong>Renforcement positif</strong> : récompenses encourageant les bons comportements</li>
+                <li><strong>Punition</strong> : conséquences négatives limitant les comportements indésirables</li>
+                <li><strong>Extinction</strong> : disparition progressive des comportements non renforcés</li>
+            </ul>
+        </article>
+    </section>
+
+    <!-- Environnement -->
+    <section>
+        <h2>L'Environnement de Simulation</h2>
+
+        <article>
+            <h3>La Pièce</h3>
+            <p>
+                L’environnement de la simulation est constitué d’une <strong>pièce unique et fixe</strong>,
+                représentant un espace de vie domestique, tel qu’un salon. Cette pièce est modélisée
+                sous la forme d’une grille bidimensionnelle de taille N × N, dans laquelle chaque case
+                correspond à une position possible pour l’animal ou un objet.
+            </p>
+            <p>
+                Le choix d’un environnement unique permet de concentrer l’analyse sur le comportement
+                de l’animal et ses interactions, sans complexifier inutilement la simulation par des
+                changements de décor ou de zones multiples.
+            </p>
+
+            <h3>Objets Présents</h3>
+            <p>
+                La pièce contient différents objets avec lesquels l’animal peut interagir.
+                Chaque objet possède des règles spécifiques déterminant si l’interaction est autorisée
+                ou interdite, ainsi que son impact sur les compétences de l’animal.
+            </p>
+
+            <table>
+                <caption>
+                    Liste des objets présents dans la pièce de simulation, leur type d'interaction autorisée ou interdite.
+                </caption>
+                <thead>
+                    <tr>
+                        <th>Objet</th>
+                        <th>Type d'Interaction</th>
+                        <th>Impact</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Canapé</td>
+                        <td>Interdit (monter, faire pipi)</td>
+                        <td>Discipline, Propreté</td>
+                    </tr>
+                    <tr>
+                        <td>Table</td>
+                        <td>Interdit (sauter dessus)</td>
+                        <td>Discipline</td>
+                    </tr>
+                    <tr>
+                        <td>Poubelle</td>
+                        <td>Interdit (fouiller)</td>
+                        <td>Propreté, Discipline</td>
+                    </tr>
+                    <tr>
+                        <td>Panier / Coussin</td>
+                        <td>Autorisé (dormir)</td>
+                        <td>Propreté +</td>
+                    </tr>
+                    <tr>
+                        <td>Bac à litière</td>
+                        <td>Autorisé (besoins)</td>
+                        <td>Propreté +</td>
+                    </tr>
+                    <tr>
+                        <td>Balle</td>
+                        <td>Autorisé (jouer)</td>
+                        <td>Propreté +</td>
+                    </tr>
+                    <tr>
+                        <td>Vase</td>
+                        <td>Fragile (ne pas casser)</td>
+                        <td>Discipline</td>
+                    </tr>
+                </tbody>
+            </table>
+        </article>
+            <figure id="piece-figure">
+            <img id="piece" src="./images/piece.png" alt="La pièce de simulation" />
+            <figcaption>
+                Représentation de la pièce de simulation où l'animal évolue et apprend. 
+            </figcaption>
+</figure>
+
+
+    </section>
+
+    <!-- Acteurs -->
+    <section>
+        <h2>Les Acteurs</h2>
+
+        <article>
+            <h3>Les Animaux</h3>
+            <p>
+                La simulation prend en charge deux types d’animaux domestiques : le chien et le chat.
+                Bien qu’ils partagent le même environnement, ces animaux présentent des comportements
+                et des caractéristiques distinctes, ce qui influence leur manière d’apprendre.
+            </p>
+
+            <h4>🐕 Le Chien</h4>
+            <ul class="styled-list">
+                <li>Dort dans un <strong>panier</strong></li>
+                <li>Réagit plus rapidement aux récompenses</li>
+                <li>Plus réceptif aux ordres du maître</li>
+                <li>Tendance naturelle à l’obéissance</li>
+            </ul>
+
+            <h4>🐈 Le Chat</h4>
+            <ul class="styled-list">
+                <li>Dort sur un <strong>coussin</strong></li>
+                <li>Comportement plus indépendant</li>
+                <li>Apprentissage plus lent</li>
+                <li>Nécessite davantage de patience</li>
+            </ul>
+        </article>
+
+        <article>
+            <h3>Le Maître</h3>
+            <p>
+                Le maître représente l’utilisateur de l’application. Il n’agit pas directement sur
+                le comportement de l’animal, mais intervient uniquement par des actions influençant
+                le processus d’apprentissage.
+            </p>
+            <p>
+                Son rôle est donc indirect : il observe les actions de l’animal et applique des
+                conséquences adaptées, sans contrôler explicitement les décisions de l’animal.
+            </p>
+
+            <ul class="styled-list">
+                <li>Donner des ordres simples</li>
+                <li>Avertir en cas de comportement interdit</li>
+                <li>Punir modérément ou sévèrement</li>
+                <li>Imposer une pause temporaire</li>
+            </ul>
+        </article>
+    </section>
+
+    <!-- Points forts -->
+    <section>
+        <h2>Points Forts du Projet</h2>
+
+        <article>
+            <h3>Innovations et Qualités</h3>
+            <ul class="styled-list">
+                <li>Système de progression basé sur des jauges évolutives</li>
+                <li>Comportement réaliste inspiré de théories scientifiques</li>
+                <li>Architecture claire et modulaire</li>
+                <li>Séparation nette entre logique métier et interface</li>
+                <li>Facilité d’extension du système</li>
+            </ul>
+        </article>
+
+    </section>
+
+    <!-- Apprentissages -->
+    <section>
+        <h2>Apprentissages et Compétences</h2>
+
+        <article>
+            <h3>Compétences Techniques Développées</h3>
+            <ol class="styled-list">
+                <li>Programmation orientée objet en Java</li>
+                <li>Gestion des événements</li>
+                <li>Conception d’interfaces graphiques</li>
+                <li>Modélisation UML</li>
+                <li>Utilisation de Git pour le travail collaboratif</li>
+            </ol>
+
+            <h3>Compétences Transversales</h3>
+            <ul class="styled-list">
+                <li>Travail en équipe</li>
+                <li>Organisation et gestion de projet</li>
+                <li>Rédaction de documentation</li>
+                <li>Communication technique</li>
+            </ul>
+        </article>
+    </section>
+
+</main>
+
+    <footer>
+        <span>© 2025 - Projet Dressage - Realisé par: ZIRMI, MOKRANE et KHITOUS</span>
+        <span>Université CY Cergy Paris - L2 Informatique</span>
+        <span>Adresse : CY Cergy Paris Université, Site de Neuville, 5 Mail Gay-Lussac, 95031 Neuville-sur-Oise</span>
+        <span><a href="contact.html">Nous contacter</a></span>
+    </footer>
+
+</body>
+</html>

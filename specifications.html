@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Spécifications techniques détaillées du projet de dressage" />
+    <title>Projet Dressage - Spécifications</title>
+    <link rel="icon" type="image/png" href="images/logo.png"/>
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+<header>
+    <h1>🐕 PROJET DRESSAGE 🐈</h1>
+    <!-- Navigation principale -->
+    <nav id="NavPrincipale">
+        <ul>
+            <li>
+             <a href="index.html">
+                <img id="logo" src="./images/logo.png" alt="Logo du projet Dressage"/>
+             </a>
+             </li>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="presentation.html">Présentation</a></li>
+            <li><a href="specifications.html">Spécifications</a></li>
+            <li><a href="recompenses.html">Système de récompense</a></li>
+            <li><a href="realisation.html">Realisation</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+    <main>
+        <section>
+            <h2>Spécifications Techniques</h2>
+            <article>
+                <h3>Architecture du Système</h3>
+                <p>Le projet utilise le <strong>pattern MVC (Modèle-Vue-Contrôleur)</strong> afin de séparer clairement la logique métier, la présentation et la gestion des interactions :</p>
+                <ul class="styled-list">
+                    <li><strong>Modèle</strong> : gestion des états des animaux, des compétences et des objets de l’environnement</li>
+                    <li><strong>Vue</strong> : interface graphique 2D, affichage de la pièce, des animaux et jauges de compétences</li>
+                    <li><strong>Contrôleur</strong> : réception des ordres du maître, déclenchement des actions, calcul des scores et mise à jour de la vue</li>
+                </ul>
+            </article>
+        </section>
+
+        <section>
+            <h2>Actions Possibles</h2>
+            <article>
+                <h3>Actions Communes aux Deux Animaux</h3>
+                <table>
+                    <caption>Actions de base communes aux animaux et leurs effets sur les compétences</caption>
+                    <thead>
+                        <tr>
+                            <th>Action</th>
+                            <th>Description</th>
+                            <th>Compétence Affectée</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Se déplacer</td>
+                            <td>Déplacement libre dans la pièce selon la grille N×N</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>Jouer avec un jouet</td>
+                            <td>Interaction avec une balle ou un jouet interactif</td>
+                            <td>Propreté +2</td>
+                        </tr>
+                        <tr>
+                            <td>Dormir</td>
+                            <td>Repos dans le panier ou coussin selon l’animal</td>
+                            <td>Propreté +1</td>
+                        </tr>
+                        <tr>
+                            <td>Faire ses besoins</td>
+                            <td>Au bon endroit (bac à litière / extérieur simulé) ou mauvais endroit</td>
+                            <td>Propreté ± selon réussite</td>
+                        </tr>
+                        <tr>
+                            <td>Casser le vase</td>
+                            <td>Comportement accidentel grave dans la pièce</td>
+                            <td>Discipline -3</td>
+                        </tr>
+                        <tr>
+                            <td>Fouiller la poubelle</td>
+                            <td>Comportement interdit</td>
+                            <td>Propreté -2, Discipline -1</td>
+                        </tr>
+                        <tr>
+                            <td>Observer/Ignorer un ordre</td>
+                            <td>Réaction aux commandes du maître</td>
+                            <td>Obéissance ±</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+
+                <h3>Actions Spécifiques</h3>
+                <table>
+                    <caption> Actions spécifiques à chaque type d’animal</caption>
+                    <thead>
+                        <tr>
+                            <th>Animal</th>
+                            <th>Action Spécifique</th>
+                            <th>Impact</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Chien</td>
+                            <td>Monter sur le canapé</td>
+                            <td>Discipline -2</td>
+                        </tr>
+                        <tr>
+                            <td>Chat</td>
+                            <td>Monter sur la table</td>
+                            <td>Discipline -2</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </article>
+        </section>
+
+        <section>
+            <h2>Système de Récompenses et Punitions</h2>
+            <article>
+                <h3>Types de Punitions et Récompenses</h3>
+                <table>
+                     <caption> Types de récompenses et punitions appliquées aux animaux</caption>
+                    <thead>
+                        <tr>
+                            <th>Type</th>
+                            <th>Gravité</th>
+                            <th>Exemples</th>
+                            <th>Effet dans le jeu</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Récompense</td>
+                            <td>Légère à modérée</td>
+                            <td>Bonne action, obéissance à un ordre</td>
+                            <td>Points positifs dans les jauges de compétences</td>
+                        </tr>
+                        <tr>
+                            <td>Réprimande verbale</td>
+                            <td>Légère</td>
+                            <td>Monter sur canapé/table</td>
+                            <td>Message « Non ! », « Stop ! »</td>
+                        </tr>
+                        <tr>
+                            <td>Privation / Pause</td>
+                            <td>Modérée</td>
+                            <td>Ignorer un ordre, fouiller la poubelle</td>
+                            <td>Immobilisation temporaire</td>
+                        </tr>
+                        <tr>
+                            <td>Punition sévère</td>
+                            <td>Grave</td>
+                            <td>Casser le vase</td>
+                            <td>Impact important sur la Discipline</td>
+                        </tr>
+                    </tbody>
+                </table>
+               
+            </article>
+        </section>
+
+        <section>
+            <h2>Formules de Calcul des Compétences</h2>
+            <article>
+                <h3>Propreté</h3>
+                <p>ScoreProprete = Σ(PointsActionsCorrectes) - Σ(PointsActionsIncorrectes)</p>
+                <p><strong>Seuil :</strong> 12 points → incrément de la jauge Propreté +1, reset du score</p>
+
+                <h3>Discipline</h3>
+                <p>ScoreDiscipline = Σ(PointsActionsCorrectes) - Σ(PointsActionsIncorrectes)</p>
+                <p><strong>Seuil dynamique :</strong> SeuilDiscipline = 14 + (ScoreProprete / 2)</p>
+                <p>Quand le score dépasse le seuil → Jauge Discipline +1, reset du score</p>
+
+                <h3>Obéissance</h3>
+                <p>ScoreObeissance = Σ(PointsBonnesActions) - Σ(PointsMauvaisesActions)</p>
+                <p><strong>Seuil :</strong> 16 points → Jauge Obéissance +1, reset du score</p>
+            </article>
+        </section>
+
+        <section>
+            <h2>Technologies et Outils</h2>
+            <article>
+                <h3>Langages et Frameworks</h3>
+                <ul class="styled-list">
+                    <li>Java 17 pour la logique métier</li>
+                    <li>Swing pour l’interface graphique 2D</li>
+                </ul>
+
+                <h3>Outils de Développement</h3>
+                <ul class="styled-list">
+                    <li>Git pour le versionning</li>
+                    <li>IntelliJ IDEA comme IDE principal</li>
+                    <li>draw.io pour la modélisation UML</li>
+                </ul>
+
+                <h3>Normes et Conventions</h3>
+                <ul class="styled-list">
+                    <li>Javadoc pour documenter le code</li>
+                    <li>Principes SOLID et Clean Code</li>
+                </ul>
+            </article>
+        </section>
+
+        <section>
+            <h2>Diagrammes UML</h2>
+            <article>
+                <h3>Diagramme de Classes</h3>
+                <figure>
+                    <img src="images/diagramme-de-classe.png" alt="Diagramme UML du projet" style="max-width: 800px;" />
+                    <figcaption>Figure 1 : Diagramme de classes principal illustrant Animal, Competence, Environnement et Maître</figcaption>
+                </figure>
+
+                <h3>Classes Principales</h3>
+                <table>
+                    <caption> Classes principales et responsabilités dans le projet</caption>
+                    <thead>
+                        <tr>
+                            <th>Classe</th>
+                            <th>Responsabilité</th>
+                            <th>Attributs Clés</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Animal (abstraite)</td>
+                            <td>Représente un animal générique</td>
+                            <td>position, competences, etat</td>
+                        </tr>
+                        <tr>
+                            <td>Chien / Chat</td>
+                            <td>Implémentations spécifiques</td>
+                            <td>lieuRepos (panier/coussin)</td>
+                        </tr>
+                        <tr>
+                            <td>Competence</td>
+                            <td>Gère une jauge de compétence</td>
+                            <td>score, niveau, seuil</td>
+                        </tr>
+                        <tr>
+                            <td>Environnement</td>
+                            <td>Grille et objets interactifs</td>
+                            <td>grille[][], objets</td>
+                        </tr>
+                        <tr>
+                            <td>Maitre</td>
+                            <td>Gère les interventions (ordres, punitions)</td>
+                            <td>ordres, punitions</td>
+                        </tr>
+                        <tr>
+                            <td>Objet (abstraite)</td>
+                            <td>Éléments interactifs dans la pièce</td>
+                            <td>position, type, interdit</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+            </article>
+        </section>
+    </main>
+
+    <footer>
+        <span>© 2025 - Projet Dressage - Realisé par: ZIRMI, MOKRANE et KHITOUS</span>
+        <span>Université CY Cergy Paris - L2 Informatique</span>
+        <span>Adresse : CY Cergy Paris Université, Site de Neuville, 5 Mail Gay-Lussac, 95031 Neuville-sur-Oise</span>
+        <span><a href="contact.html">Nous contacter</a></span>
+    </footer>
+</body>
+</html>

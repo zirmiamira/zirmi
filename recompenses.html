@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Système de compétences et de récompenses du projet de dressage" />
+    <title>Projet Dressage - Système de Compétences</title>
+    <link rel="icon" type="image/png" href="images/logo.png"/>
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+   <header>
+    <h1>🐕 PROJET DRESSAGE 🐈</h1>
+    <!-- Navigation principale -->
+    <nav id="NavPrincipale">
+        <ul>
+            <li>
+             <a href="index.html">
+                <img id="logo" src="./images/logo.png" alt="Logo du projet Dressage"/>
+             </a>
+             </li>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="presentation.html">Présentation</a></li>
+            <li><a href="specifications.html">Spécifications</a></li>
+            <li><a href="recompenses.html">Système de récompense</a></li>
+            <li><a href="realisation.html">Realisation</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2>Système de Récompenses et Compétences</h2>
+            <article>
+                <h3>Principe Général</h3>
+                <p>Le système de récompenses et de punitions repose sur le <strong>conditionnement opérant</strong>. Chaque action de l’animal influence ses compétences via :</p>
+                <ul>
+                    <li>Des <strong>points positifs</strong> pour les bonnes actions (récompenses)</li>
+                    <li>Des <strong>points négatifs</strong> pour les mauvaises actions (punitions)</li>
+                    <li>Des <strong>seuils</strong> : lorsque le score cumulé atteint un seuil, la jauge de compétence augmente d’un niveau et le score est remis à zéro</li>
+                </ul>
+            </article>
+        </section>
+
+        <section>
+            <h2>Compétence 1 : Propreté</h2>
+            <article>
+                <h3>Définition</h3>
+                <p>La <strong>Propreté</strong> mesure la capacité de l’animal à utiliser correctement son espace et à éviter de salir la pièce.</p>
+
+                <h3>Actions et Points</h3>
+                <table>
+                    <caption>Actions évaluant la compétence Propreté</caption>
+
+                    <thead>
+                        <tr>
+                            <th>Action</th>
+                            <th>Type</th>
+                            <th>Points</th>
+                            <th>Explication</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Dormir dans le panier/coussin</td><td> Bonne</td><td>+1</td><td>Utilise son espace personnel correctement</td></tr>
+                        <tr><td>Jouer avec le jouet sans dégâts</td><td> Bonne</td><td>+2</td><td>S’amuse sans causer de désordre</td></tr>
+                        <tr><td>Faire ses besoins au bon endroit</td><td> Bonne</td><td>+3</td><td>Utilise le bac à litière ou l’endroit désigné</td></tr>
+                        <tr><td>Fouiller la poubelle</td><td> Mauvaise</td><td>-2</td><td>Salit et crée du désordre</td></tr>
+                        <tr><td>Faire pipi au mauvais endroit</td><td> Mauvaise</td><td>-4</td><td>Erreur grave de propreté</td></tr>
+                    </tbody>
+                </table>
+
+                <h3>Formule de Calcul</h3>
+                <p>ScoreProprete = Σ(PointsActionsCorrectes) - Σ(PointsActionsIncorrectes)</p>
+                <p><strong>Seuil :</strong> 12 points → Jauge Propreté +1, reset du score</p>
+
+
+                <h3>Exemple d'une jauge de Progression</h3>
+                <figure>
+                    <img src="images/jauge.png" alt="Jauge de compétence" class="jauge-image"/>
+                    <figcaption>
+                        Jauge représentant le niveau actuel de la compétence. 
+                        Elle se remplit progressivement en fonction des points accumulés par l’animal.
+                    </figcaption>
+
+                </figure>
+                
+            </article>
+        </section>
+
+        <section>
+            <h2>Compétence 2 : Discipline</h2>
+            <article>
+                <h3>Définition</h3>
+                <p>La <strong>Discipline</strong> mesure le respect des règles et la prudence de l’animal vis-à-vis des objets fragiles et interdits.</p>
+
+                <h3>Actions et Points</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Action</th>
+                            <th>Type</th>
+                            <th>Points</th>
+                            <th>Explication</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Ignorer objets fragiles</td><td> Bonne</td><td>+3</td><td>Fait preuve de prudence</td></tr>
+                        <tr><td>Observer sans toucher</td><td> Bonne</td><td>+2</td><td>Curiosité contrôlée</td></tr>
+                        <tr><td>Monter sur meubles interdits</td><td> Mauvaise</td><td>-2</td><td>Désobéissance</td></tr>
+                        <tr><td>Casser le vase</td><td> Mauvaise</td><td>-3</td><td>Erreur grave</td></tr>
+                    </tbody>
+                </table>
+
+                <h3>Formule de Calcul</h3>
+                <p><code>ScoreDiscipline = Σ(PointsBonnesActions) - Σ(PointsMauvaisesActions)</code></p>
+                <p><strong>Seuil dynamique :</strong> <code>SeuilDiscipline = 14 + (ScoreProprete / 2)</code></p>
+                <p>Score ≥ SeuilDiscipline → Jauge Discipline +1, reset du score</p>
+
+            </article>
+        </section>
+
+        <section>
+            <h2>Compétence 3 : Obéissance</h2>
+            <article>
+                <h3>Définition</h3>
+                <p>L’<strong>Obéissance</strong> évalue la capacité de l’animal à suivre correctement les ordres du maître.</p>
+
+                <h3>Actions et Points</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Action</th>
+                            <th>Type</th>
+                            <th>Points</th>
+                            <th>Explication</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Obéir à un ordre simple</td><td> Bonne</td><td>+2</td><td>Suit les instructions</td></tr>
+                        <tr><td>Répéter correctement un ordre</td><td> Bonne</td><td>+1</td><td>Renforcement de l’apprentissage</td></tr>
+                        <tr><td>Ignorer un ordre</td><td> Mauvaise</td><td>-2</td><td>Désobéissance</td></tr>
+                    </tbody>
+                </table>
+
+                <h3>Formule de Calcul</h3>
+                <p><code>ScoreObeissance = Σ(PointsBonnesActions) - Σ(PointsMauvaisesActions)</code></p>
+                <p>Seuil = 16 points → Jauge Obéissance +1, reset du score</p>
+
+            </article>
+        </section>
+    </main>
+
+    <footer>
+        <span>© 2025 - Projet Dressage - Realisé par: ZIRMI, MOKRANE et KHITOUS</span>
+        <span>Université CY Cergy Paris - L2 Informatique</span>
+        <span>Adresse : CY Cergy Paris Université, Site de Neuville, 5 Mail Gay-Lussac, 95031 Neuville-sur-Oise</span>
+        <span><a href="contact.html">Nous contacter</a></span>
+    </footer>
+</body>
+</html>

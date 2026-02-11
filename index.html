@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Projet GLP de simulation de dressage d'un animal par récompense et punition" />
+    <title>Projet Dressage - Accueil</title>
+    <link rel="icon" type="image/png" href="images/logo.png"/>
+    <link rel="stylesheet" href="css/style.css"/>
+
+    <style>
+        /* Bouton retour en haut */
+    #back-to-top {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: #5970d5;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 1rem;
+}
+
+#back-to-top:hover {
+    background-color: #764ba2;
+}
+
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>🐕 PROJET DRESSAGE 🐈</h1>
+    <!-- Navigation principale -->
+    <nav id="NavPrincipale">
+        <ul>
+            <li>
+             <a href="index.html">
+                <img id="logo" src="./images/logo.png" alt="Logo du projet Dressage"/>
+             </a>
+             </li>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="presentation.html">Présentation</a></li>
+            <li><a href="specifications.html">Spécifications</a></li>
+            <li><a href="recompenses.html">Système de récompense</a></li>
+            <li><a href="realisation.html">Realisation</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+<!-- Navigation secondaire -->
+    <aside id="side-menu">
+        <nav>
+            <h2>Navigation rapide</h2>
+            <ul>
+                <li><a href="#introduction">Introduction</a></li>
+                <li><a href="#objectifs">Objectifs</a></li>
+                <li><a href="#technologies">Technologies</a></li>
+                <li><a href="#ressources">Ressources</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+<main>
+        
+       <div class="welcome-banner">
+            <h2 style="margin: 0; font-size: 2.5rem;">Bienvenue sur notre projet</h2>
+            <p style="font-size: 1.2rem; margin-top: 0.5rem;">Découvrez notre application de dressage d'animaux</p>
+        </div>
+    <!-- Introduction -->
+    <section id="introduction">
+        <h2>Introduction au projet</h2>
+            <p>
+              Ce projet s’inscrit dans une démarche de modélisation et de simulation d’un système interactif
+              mettant en scène un animal virtuel. Il permet d’illustrer plusieurs notions fondamentales du
+              génie logiciel, notamment la séparation entre la logique métier et l’interface graphique,
+              la gestion des événements, la programmation graphique ainsi que la modélisation d’un système
+              dynamique évoluant dans le temps en fonction des actions et des décisions prises.
+            </p>
+
+        <article>
+            <h3>Contexte général</h3>
+            <p>
+             Le projet <strong>DRESSAGE</strong> est un projet universitaire réalisé dans le cadre de l’UE
+             Génie Logiciel et Projet (GLP). Il a pour objectif principal de concevoir et de réaliser une
+              application de simulation permettant d’observer, d’analyser et de comprendre le comportement
+              d’un animal virtuel placé dans un environnement contrôlé.
+           </p>
+
+            <p>
+             Le fonctionnement de la simulation repose sur le principe du <em>conditionnement par récompense
+             et punition</em>. Chaque action effectuée par l’animal est évaluée par le système, ce qui permet
+             de modéliser un apprentissage progressif basé sur les conséquences positives ou négatives de
+             ses comportements.
+            </p>
+
+        </article>
+        <article>
+            <h3>Les animaux</h3>
+            <p>
+                Deux types d’animaux sont pris en compte dans la simulation :
+            </p>
+              <ul class="styled-list">
+                    <li><strong>Le Chien</strong> : dort dans un panier, peut apprendre des ordres spécifiques</li>
+                    <li><strong>Le Chat</strong> : dort sur un coussin, plus indépendant mais éducable</li>
+                </ul>
+            <p>
+                Ces animaux évoluent dans une pièce unique et peuvent interagir avec différents objets
+                présents dans l’environnement.
+            </p>
+            <p>
+                Le choix du chien et du chat permet de représenter des comportements familiers et réalistes,
+                tout en facilitant la compréhension des mécanismes de dressage et d’apprentissage.
+            </p>
+            <figure>
+                    <img src="images/animaux.png" alt="Le chat et le chien" class="animaux"/>
+                    <figcaption>
+                        Les animaux de notre application Dressage.
+                    </figcaption>
+
+                </figure>
+        </article>
+    </section>
+
+    <!-- Objectifs -->
+    <section id="objectifs">
+        <h2>Objectifs du projet</h2>
+
+        <article>
+            <h3>Objectif principal</h3>
+            <p>
+               L’objectif principal du projet est de simuler le dressage d’un animal virtuel afin de l’amener
+               progressivement à adopter des comportements conformes aux règles définies. Cette progression
+               est matérialisée par des jauges de compétences qui <strong>évoluent</strong>  en fonction des actions réalisées
+               par l’animal et des réactions du système.
+           </p>
+
+        </article>
+
+        <article>
+            <h3>Compétences à développer</h3>
+            <table>
+                 <caption>Tableau montrant les différentes compétences que l’animal doit améliorer</caption>
+                    <thead>
+                        <tr>
+                            <th>Compétence</th>
+                            <th>Description</th>
+                            <th>Seuil</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Propreté</strong></td>
+                            <td>Éviter de salir la pièce ou abîmer des objets</td>
+                            <td>12 points</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Discipline</strong></td>
+                            <td>Respecter les règles générales et prudence avec objets fragiles</td>
+                            <td>14 + Propreté/2</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Obéissance</strong></td>
+                            <td>Suivre correctement les ordres du maître</td>
+                            <td>16 points</td>
+                        </tr>
+                    </tbody>
+                </table>
+        </article>
+    </section>
+
+    <!-- Technologies -->
+    <section id="technologies">
+        <h2>Technologies utilisées</h2>
+        <p>
+            Le projet s’appuie sur des technologies éprouvées et couramment utilisées dans le développement
+            logiciel, afin de garantir une conception claire, structurée et maintenable. Ces technologies
+            permettent de séparer efficacement la logique métier, la modélisation et l’interface utilisateur.
+        </p>
+
+        <ol class="styled-list">
+            <li><strong>Java</strong> : langage de programmation principal pour la logique métier</li>
+            <li><strong>Swing</strong> : bibliothèques pour l'interface graphique</li>
+            <li><strong>Git</strong> : gestion de versions et collaboration</li>
+            <li><strong>UML</strong> : modélisation des diagrammes de classes</li>
+        </ol>
+    </section>
+
+    <!-- Ressources -->
+    <section id="ressources">
+        <h2>Liens et Ressources</h2>
+        <p>
+            Plusieurs ressources externes ont été utilisées afin d’approfondir les notions abordées dans
+            le projet et de s’inspirer de solutions existantes. Ces ressources concernent aussi bien les
+            technologies employées que les concepts théoriques liés au conditionnement et à la simulation.
+        </p>
+
+        <ul class="styled-list">
+                    <!-- Lien absolu vers un autre site web -->
+                    <li><a href="https://www.oracle.com/java/" target="_blank">Oracle Java - Site officiel</a></li>
+
+                    <!-- Lien absolu vers une page spécifique d'un site web -->
+                    <li><a href="https://docs.oracle.com/javase/8/docs/api/javax/swing/package-summary.html" target="_blank">Swing - Guide de démarrage</a></li>
+                    
+                    <!-- Lien absolu vers un emplacement précis d'une page spécifique -->
+                    <li><a href="https://fr.wikipedia.org/wiki/Conditionnement_op%C3%A9rant#Renforcement_positif" target="_blank">Wikipédia - Conditionnement opérant (section Renforcement positif)</a></li>
+                    
+                    <!-- Lien avec paramètres -->
+                    <li><a href="https://cours.cyu.fr/course/view.php?id=3162#sectionid-22975-title" target="_blank">Plateforme de cours CY Cergy Paris Université</a></li>
+
+                    <!-- Lien vers une ressource externe (PDF) -->
+                    <li><a href="https://static.oc-static.com/prod/ebooks/apprenez-a-creer-votre-site-web-avec-html5-et-css3_2016.pdf" target="_blank">Spécification HTML5 et CSS3 (PDF)</a></li>
+
+                    <!-- Lien vers une ressource interne (PDF) -->
+                    <li><a href="./ressources/documentSpecification.pdf" target="_blank">Spécification Du Projet Dressage</a></li>
+                    
+                    
+        </ul>
+            <aside class="remarque">
+                 <p><strong> Documentation :</strong> Consultez notre <a href="specifications.html">page de spécifications</a> pour plus de détails techniques sur le projet.</p>
+            </aside>
+    </section>
+     
+            <p style="background-color: transparent; color: #192164; padding: 1rem 0;"><a href="#" id="back-to-top">⬆ Retour en haut de page</a></p>
+
+</main>
+
+    <footer>
+        <span>© 2025 - Projet Dressage - Realisé par: ZIRMI, MOKRANE et KHITOUS</span>
+        <span>Université CY Cergy Paris - L2 Informatique</span>
+        <span>Adresse : CY Cergy Paris Université, Site de Neuville, 5 Mail Gay-Lussac, 95031 Neuville-sur-Oise</span>
+        <span><a href="contact.html">Nous contacter</a></span>
+    </footer>
+
+</body>
+</html>
